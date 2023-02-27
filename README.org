@@ -1,0 +1,86 @@
+#+TITLE: Desarrollo Web en AWS
+#+AUTHOR: Pedro Prieto Alarcón
+#+EMAIL: p.prietoalarcon@edu.gva.es
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_THEME: black
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: toc:nil num:nil timestamp:nil
+
+* CloudShell
+#+ATTR_REVEAL: :frag (roll-in) 
+- Ejecución de comandos de AWS CLI
+- ¡GRATIS!
+- Demo
+
+* Cloud9
+#+ATTR_REVEAL: :frag (roll-in) 
+- Editor en la nube
+- Sobre máquina virtual
+- Posibilidad de instalar casi cualquier SDK
+- Coste: precio de la instancia sobre la que se ejecuta
+- Demo
+
+* DynamoDB
+#+ATTR_REVEAL: :frag (roll-in) 
+- Base de datos como servicio
+- Rápida de configurar para aplicaciones sencillas
+- Escalable horizontalmente ("infinitas" peticiones simultáneas)
+- También adecuada para aplicaciones complejas
+- Ejemplo: https://github.com/pedroprieto/dynamodb_design
+
+* Sitios web estáticos con AWS S3
+#+ATTR_REVEAL: :frag (roll-in) 
+- Permitir acceso público
+- Configurar política para acceso público a archivos (lectura)
+- Fuente: https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html
+
+* Microservicios
+** Monolitos vs microservicios
+[[./imagenes/microservicios.png]]
+
+** Aplicación completa
+[[./imagenes/aplicacion_completa_spa.png]]
+
+* Integración continua
+[[./imagenes/integracion_continua.png]]
+
+** AWS
+#+ATTR_REVEAL: :frag (roll-in) 
+- CodeCommit
+- CodeBuild (no disponible en laboratorios Academy)
+- CodePipeline (no disponible en laboratorios Academy)
+- Alternativa: *GitHub Actions*
+
+** GitHub Actions
+#+ATTR_REVEAL: :frag (roll-in) 
+- Una Máquina Virtual para cada trabajo
+- AWS CLI incluida en la MV 
+- Marketplace: https://github.com/marketplace?type=actions
+- Secretos de repositorio (credenciales AWS)
+
+** Ejemplo: aplicación NodeJS
+[[./imagenes/integracion_continua_claudia.png]]
+
+** Ejemplo: repositorio
+- https://github.com/pedroprieto/ejemplo_microservicio_lambda
+- Utiliza GitHub Actions en lugar de CodeBuild
+  
+** Ejemplo: pasos
+#+ATTR_REVEAL: :frag (roll-in) 
+- Configurar git
+- Clonar repositorio
+- Actualizar rol en ~package.json~
+- Despliegue inicial: ~npm run deployApp~
+- Comprobar funcionamiento
+#+REVEAL: split
+#+ATTR_REVEAL: :frag (roll-in) 
+- Añadir remoto para despliegue continuo
+- Crear archivo workflow
+- Commit (~claudia.json~ y ~package.json~)
+- Configurar secretos (credenciales AWS):
+  - ~AWS_ACCESS_KEY_ID~
+  - ~AWS_SECRET_ACCESS_KEY~
+  - ~AWS_SESSION_TOKEN~
+- Publicar un cambio
+- Comprobar despliegue automático
+- Comprobar nueva funcionalidad

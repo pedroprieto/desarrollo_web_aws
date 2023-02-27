@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Desarrollo Web en AWS</title>
+<meta name="author" content="Pedro Prieto Alarcón"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Desarrollo Web en AWS</h1><p class="subtitle"></p>
+<h2 class="author">Pedro Prieto Alarcón</h2>
+</section>
+
+<section>
+<section id="slide-org4fffd54">
+<h2 id="org4fffd54">CloudShell</h2>
+<ul>
+<li class="fragment roll-in">Ejecución de comandos de AWS CLI</li>
+<li class="fragment roll-in">¡GRATIS!</li>
+<li class="fragment roll-in">Demo</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgcb5984f">
+<h2 id="orgcb5984f">Cloud9</h2>
+<ul>
+<li class="fragment roll-in">Editor en la nube</li>
+<li class="fragment roll-in">Sobre máquina virtual</li>
+<li class="fragment roll-in">Posibilidad de instalar casi cualquier SDK</li>
+<li class="fragment roll-in">Coste: precio de la instancia sobre la que se ejecuta</li>
+<li class="fragment roll-in">Demo</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge81db1c">
+<h2 id="orge81db1c">DynamoDB</h2>
+<ul>
+<li class="fragment roll-in">Base de datos como servicio</li>
+<li class="fragment roll-in">Rápida de configurar para aplicaciones sencillas</li>
+<li class="fragment roll-in">Escalable horizontalmente ("infinitas" peticiones simultáneas)</li>
+<li class="fragment roll-in">También adecuada para aplicaciones complejas</li>
+<li class="fragment roll-in">Ejemplo: <a href="https://github.com/pedroprieto/dynamodb_design">https://github.com/pedroprieto/dynamodb_design</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org93dd434">
+<h2 id="org93dd434">Sitios web estáticos con AWS S3</h2>
+<ul>
+<li class="fragment roll-in">Permitir acceso público</li>
+<li class="fragment roll-in">Configurar política para acceso público a archivos (lectura)</li>
+<li class="fragment roll-in">Fuente: <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html">https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org4121a7c">
+<h2 id="org4121a7c">Microservicios</h2>
+<div class="outline-text-2" id="text-org4121a7c">
+</div>
+</section>
+<section id="slide-orgb65ed57">
+<h3 id="orgb65ed57">Monolitos vs microservicios</h3>
+
+<div id="orgd65bcb3" class="figure">
+<p><img src="./imagenes/microservicios.png" alt="microservicios.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org3300a3e">
+<h3 id="org3300a3e">Aplicación completa</h3>
+
+<div id="orga404bf8" class="figure">
+<p><img src="./imagenes/aplicacion_completa_spa.png" alt="aplicacion_completa_spa.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga26db03">
+<h2 id="orga26db03">Integración continua</h2>
+
+<div id="org8edc6c9" class="figure">
+<p><img src="./imagenes/integracion_continua.png" alt="integracion_continua.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org3a0ffaa">
+<h3 id="org3a0ffaa">AWS</h3>
+<ul>
+<li class="fragment roll-in">CodeCommit</li>
+<li class="fragment roll-in">CodeBuild (no disponible en laboratorios Academy)</li>
+<li class="fragment roll-in">CodePipeline (no disponible en laboratorios Academy)</li>
+<li class="fragment roll-in">Alternativa: <b>GitHub Actions</b></li>
+
+</ul>
+
+</section>
+<section id="slide-orgba6e47e">
+<h3 id="orgba6e47e">GitHub Actions</h3>
+<ul>
+<li class="fragment roll-in">Una Máquina Virtual para cada trabajo</li>
+<li class="fragment roll-in">AWS CLI incluida en la MV</li>
+<li class="fragment roll-in">Marketplace: <a href="https://github.com/marketplace?type=actions">https://github.com/marketplace?type=actions</a></li>
+<li class="fragment roll-in">Secretos de repositorio (credenciales AWS)</li>
+
+</ul>
+
+</section>
+<section id="slide-org3da7d3a">
+<h3 id="org3da7d3a">Ejemplo: aplicación NodeJS</h3>
+
+<div id="orga548ead" class="figure">
+<p><img src="./imagenes/integracion_continua_claudia.png" alt="integracion_continua_claudia.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgf327970">
+<h3 id="orgf327970">Ejemplo: repositorio</h3>
+<ul>
+<li><a href="https://github.com/pedroprieto/ejemplo_microservicio_lambda">https://github.com/pedroprieto/ejemplo_microservicio_lambda</a></li>
+<li>Utiliza GitHub Actions en lugar de CodeBuild</li>
+
+</ul>
+
+</section>
+<section id="slide-org75ffe3c">
+<h3 id="org75ffe3c">Ejemplo: pasos</h3>
+<ul>
+<li class="fragment roll-in">Configurar git</li>
+<li class="fragment roll-in">Clonar repositorio</li>
+<li class="fragment roll-in">Actualizar rol en <code>package.json</code></li>
+<li class="fragment roll-in">Despliegue inicial: <code>npm run deployApp</code></li>
+<li class="fragment roll-in">Comprobar funcionamiento</li>
+
+</ul>
+</section>
+<section id="slide-org75ffe3c-split">
+<ul>
+<li class="fragment roll-in">Añadir remoto para despliegue continuo</li>
+<li class="fragment roll-in">Crear archivo workflow</li>
+<li class="fragment roll-in">Commit (<code>claudia.json</code> y <code>package.json</code>)</li>
+<li class="fragment roll-in">Configurar secretos (credenciales AWS):
+<ul>
+<li><code>AWS_ACCESS_KEY_ID</code></li>
+<li><code>AWS_SECRET_ACCESS_KEY</code></li>
+<li><code>AWS_SESSION_TOKEN</code></li>
+
+</ul></li>
+<li class="fragment roll-in">Publicar un cambio</li>
+<li class="fragment roll-in">Comprobar despliegue automático</li>
+<li class="fragment roll-in">Comprobar nueva funcionalidad</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+});
+
+</script>
+</body>
+</html>
