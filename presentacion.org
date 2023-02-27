@@ -28,7 +28,7 @@
 - También adecuada para aplicaciones complejas
 - Ejemplo: https://github.com/pedroprieto/dynamodb_design
 
-* Sitios web estáticos con AWS S3
+* Sitios web estáticos en S3
 #+ATTR_REVEAL: :frag (roll-in) 
 - Permitir acceso público
 - Configurar política para acceso público a archivos (lectura)
