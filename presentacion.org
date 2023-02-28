@@ -84,3 +84,9 @@
 - Publicar un cambio
 - Comprobar despliegue automático
 - Comprobar nueva funcionalidad
+
+* ¿Preguntas?
+[[./imagenes/preguntas.jpg]]
+
+* ¡Muchas gracias!
+
