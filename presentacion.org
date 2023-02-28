@@ -68,13 +68,13 @@
 ** Ejemplo: pasos
 #+ATTR_REVEAL: :frag (roll-in) 
 - Configurar git
-- Clonar repositorio
+- Hacer fork
+- Clonar fork
 - Actualizar rol en ~package.json~
 - Despliegue inicial: ~npm run deployApp~
 - Comprobar funcionamiento
 #+REVEAL: split
 #+ATTR_REVEAL: :frag (roll-in) 
-- Añadir remoto para despliegue continuo
 - Crear archivo workflow
 - Commit (~claudia.json~ y ~package.json~)
 - Configurar secretos (credenciales AWS):
