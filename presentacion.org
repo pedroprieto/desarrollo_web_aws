@@ -70,6 +70,7 @@
 - Configurar git
 - Hacer fork
 - Clonar fork
+- Instalar dependencias
 - Actualizar rol en ~package.json~
 - Despliegue inicial: ~npm run deployApp~
 - Comprobar funcionamiento
